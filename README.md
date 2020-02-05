@@ -1,13 +1,13 @@
 # String search
 
 The solution consists of two parts:
-1. TextFileReader class that reads a text file and parses it. 
+1. **TextFileReader class** that reads a text file and parses it. 
 Parser removes newlines and punctuation marks, divides words into two parts if they contain
 an apostrophe or hyphen.
 
-2. StringSearch class that searches for the longest word and the word with the highest frequency.
+2. **StringSearch class** that searches for the longest word and the word with the highest frequency.
 
-### Before the start
+## Before the start
 Before starting, we must determine the path to the text file, the beginning of the book,
 the end of the book.
 
@@ -25,7 +25,7 @@ TextFileReader textFileReader = new TextFileReader();
 List<String> wordList = textFileReader.getTextAsWordList(filePath, start, end);
 ```
 
-### TextFileReader
+## TextFileReader
 We read the file and convert it to a string.
 ```java
 String getTextFromFileAsString(String filePath) throws IOException {
@@ -51,7 +51,7 @@ public List<String> getTextAsWordList(String filePath, String start, String end)
 }
 ```
 
-### String Search
+## String Search
 In order to find the longest word, we sort the words in the list by their length.
 After that, we reverse the list: the first word is the longest.
 
@@ -90,15 +90,15 @@ public Map.Entry<String, Long> getWordsWithHighestFrequency(List<String> wordLis
 1. We can run the program using the traditional **main()** method in the **Main class**
 2. We can run the methods in the REST Controller.
 
-Get the longest words
-```
-http://localhost:8080/stringSearch/getLongestWords
-```
-
-Get the word with the highest frequency
-```
-http://localhost:8080/stringSearch/getWordsWithHighestFrequency
-```
+    Get the longest words
+    ```
+    http://localhost:8080/stringSearch/getLongestWords
+    ```
+    
+    Get the word with the highest frequency
+    ```
+    http://localhost:8080/stringSearch/getWordsWithHighestFrequency
+    ```
 
 ## Unit Tests
 Unit tests are in the test folder
